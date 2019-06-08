@@ -16,3 +16,7 @@ double VariableExpression::eval(EvalState& state) {
 }
 
 expressionType VariableExpression::getType() { return kVariableExpression; }
+
+void VariableExpression::addParent(Expression* p){
+    otherParents.push_back(p);
+}

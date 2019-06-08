@@ -43,6 +43,8 @@ void fixExpressionGraph(Expression* node, int side = 0) {
             } else if(side == 0) {
                 
             } else {}
+            // this is essential for back prop
+            static_cast<VariableExpression*>(repeatedSyms[name])->addParent(node->getParent());
             // the following line of code
             // does nothing at the moment. I think.
             delete node;
