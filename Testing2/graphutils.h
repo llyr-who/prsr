@@ -15,9 +15,10 @@
 #include <map>
 #include <string>
 
+// we are going to create a graph object
+
 namespace {
     std::map< std::string, Expression* > repeatedSyms;
-    Expression* parent;
 }
 
 // this function fixes duplicate variables. 
