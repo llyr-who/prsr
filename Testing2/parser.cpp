@@ -40,7 +40,6 @@ Expression *ReadExpression(Scanner & scanner, int prec) {
 Expression *ReadTerm(Scanner & scanner) {
     Expression *exp;
     std::string token = scanner.nextToken();
-    std::cout << token << std::endl;
     if (isdigit(token[0])) {
         exp = new ConstantExpression(std::stoi(token));
     } else if (isalpha(token[0])) {

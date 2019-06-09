@@ -1,32 +1,37 @@
 //
-//  graphutils.hpp
+//  expressiongraph.cpp
 //  Testing2
 //
-//  Created by AnthonyFPP on 04/06/2019.
+//  Created by AnthonyFPP on 08/06/2019.
 //  Copyright © 2019 AnthonyFPP. All rights reserved.
 //
 
-#ifndef graphutils_h
-#define graphutils_h
+#include "expressiongraph.h"
 
-#include "expression.h"
-
-#include <iostream>
-#include <map>
-#include <string>
-
-// we are going to create a graph object
 
 namespace {
     std::map< std::string, Expression* > repeatedSyms;
 }
 
-// this function fixes duplicate variables. 
+
+
+ExpressionGraph::ExpressionGraph(Expression* graph) : graph(graph) {
+    fixExpressionGraph(graph);
+}
+
+ExpressionGraph::ExpressionGraph(Expression* graph,
+                                 EvalState& state) :
+                                 graph(graph),
+                                 state(state) {
+    fixExpressionGraph(graph);
+}
+
+// this function fixes duplicate variables.
 // -1, 1 indicate that we are calling
 // the function recursively on the
 // LHS and RHS respectively. If we introduce
 // unary operations then we pass 0
-void fixExpressionGraph(Expression* node, int side = 0) {
+void ExpressionGraph::fixExpressionGraph(Expression* node, int side) {
     if(node->getType() == kBinaryOperation) {
         node->getLHS()->setParent(node);
         node->getRHS()->setParent(node);
@@ -55,9 +60,6 @@ void fixExpressionGraph(Expression* node, int side = 0) {
     }
 }
 
-
-std::map< std::string, Expression* > returnMap() {
-    return repeatedSyms;
+void ExpressionGraph::ForwardPass() {
+    
 }
-
-#endif /* graphutils_hpp */

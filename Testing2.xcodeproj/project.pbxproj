@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921D237D22ABCECA0095B1D7 /* expressiongraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 921D237B22ABCECA0095B1D7 /* expressiongraph.cpp */; };
 		927E8E5B22A2787B009E2784 /* variableexpression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927E8E5A22A2787B009E2784 /* variableexpression.cpp */; };
 		92850B9022883533006E13B1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92850B8F22883533006E13B1 /* main.cpp */; };
 		9295DD6C229889E5001550AE /* scanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9295DD6B229889E5001550AE /* scanner.cpp */; };
@@ -30,7 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		921D237922A674F20095B1D7 /* graphutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graphutils.h; sourceTree = "<group>"; };
+		921D237B22ABCECA0095B1D7 /* expressiongraph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = expressiongraph.cpp; sourceTree = "<group>"; };
+		921D237C22ABCECA0095B1D7 /* expressiongraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = expressiongraph.h; sourceTree = "<group>"; };
 		927E8E5A22A2787B009E2784 /* variableexpression.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = variableexpression.cpp; sourceTree = "<group>"; };
 		92850B8C22883533006E13B1 /* Testing2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Testing2; sourceTree = BUILT_PRODUCTS_DIR; };
 		92850B8F22883533006E13B1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -80,7 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				92850B8F22883533006E13B1 /* main.cpp */,
-				921D237922A674F20095B1D7 /* graphutils.h */,
+				921D237B22ABCECA0095B1D7 /* expressiongraph.cpp */,
+				921D237C22ABCECA0095B1D7 /* expressiongraph.h */,
 				9295DD6A229889C3001550AE /* scanner.h */,
 				9295DD6E229B0E87001550AE /* expression.h */,
 				92B6F0FE22A12DB9009F7F3F /* expression.cpp */,
@@ -162,6 +165,7 @@
 				92B6F0FD22A12BCA009F7F3F /* constantexpression.cpp in Sources */,
 				927E8E5B22A2787B009E2784 /* variableexpression.cpp in Sources */,
 				92850B9022883533006E13B1 /* main.cpp in Sources */,
+				921D237D22ABCECA0095B1D7 /* expressiongraph.cpp in Sources */,
 				92C2AC34229FBF7E007C379D /* evalstate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
