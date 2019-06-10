@@ -24,7 +24,7 @@ private:
 public:
     ExpressionGraph(Expression* graph);
     ExpressionGraph(Expression* graph, EvalState& state);
-    void ForwardPass();
+    double ForwardPass();
 };
 
 #endif /* expressiongraph_hpp */

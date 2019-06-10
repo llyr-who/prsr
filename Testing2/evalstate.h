@@ -12,10 +12,11 @@
 #ifndef evalstate_hpp
 #define evalstate_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include <map>
 #include <string>
-class EvalState{
+
+class EvalState {
 public:
     EvalState();
    ~EvalState();

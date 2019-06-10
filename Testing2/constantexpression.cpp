@@ -13,7 +13,7 @@
 ConstantExpression::ConstantExpression(double val) : m_value(val) {}
 
 double ConstantExpression::eval(EvalState& state) {
-    return 1;
+    return m_value;
 }
 
 expressionType ConstantExpression::getType() { return kConstantExpression; }

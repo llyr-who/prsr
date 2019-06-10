@@ -17,7 +17,18 @@ BinaryOperation::BinaryOperation(char operation,
                                   rhs(rhs) {}
 
 double BinaryOperation::eval(EvalState & state){
-    return 1;
+    if(op == '+') {
+        return lhs->eval(state) + rhs->eval(state);
+    }
+    if(op == '*') {
+        return lhs->eval(state) * rhs->eval(state);
+    }
+    if(op == '/') {
+        return lhs->eval(state) / rhs->eval(state);
+    }
+    else {
+        return lhs->eval(state) - rhs->eval(state);
+    }
 }
 
 

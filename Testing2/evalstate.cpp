@@ -16,9 +16,11 @@ void EvalState::setValue(std::string var, double val) {
 }
 
 double EvalState::getValue(std::string var) {
-    return m_symbolTable[var];
+    if(isDefined(var)) return m_symbolTable[var];
+    std::cout << "no var exists, consider using isDefined" << std::endl;
+    return 0;
 }
 
 bool EvalState::isDefined(std::string var) {
-    return m_symbolTable[var];
+    return m_symbolTable.find(var) != m_symbolTable.end();
 }

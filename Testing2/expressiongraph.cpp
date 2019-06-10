@@ -24,6 +24,10 @@ ExpressionGraph::ExpressionGraph(Expression* graph,
                                  graph(graph),
                                  state(state) {
     fixExpressionGraph(graph);
+    // call forward pass.
+    // call reverse pass.
+                                     
+                                    
 }
 
 // this function fixes duplicate variables.
@@ -60,6 +64,6 @@ void ExpressionGraph::fixExpressionGraph(Expression* node, int side) {
     }
 }
 
-void ExpressionGraph::ForwardPass() {
-    
+double ExpressionGraph::ForwardPass() {
+    return graph->eval(state);
 }

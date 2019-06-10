@@ -12,7 +12,11 @@ VariableExpression::VariableExpression(std::string name) : name(name) {}
 
 
 double VariableExpression::eval(EvalState& state) {
-    return 1;
+    if(state.isDefined(name)) {
+        return state.getValue(name);
+    }
+    std::cout << "corrupt state" << std::endl;
+    return 0;
 }
 
 expressionType VariableExpression::getType() { return kVariableExpression; }
