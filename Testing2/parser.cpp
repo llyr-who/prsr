@@ -21,7 +21,7 @@ Expression *ParseExpression(Scanner& scanner, int prec)
     return e;
 }
 
-Expression *ReadExpression(Scanner & scanner, int prec) {
+Expression *ReadExpression(Scanner& scanner, int prec) {
     Expression *exp = ReadTerm(scanner);
     std::string token;
     while (true) {
@@ -36,8 +36,8 @@ Expression *ReadExpression(Scanner & scanner, int prec) {
 }
 
 
-// This needs to be altered to deal with possible uniary operators
-Expression *ReadTerm(Scanner & scanner) {
+// This needs to be altered to deal with possible unary operators
+Expression *ReadTerm(Scanner& scanner) {
     Expression *exp;
     std::string token = scanner.nextToken();
     if (isdigit(token[0])) {

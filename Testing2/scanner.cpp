@@ -47,7 +47,7 @@ std::string Scanner::getBuffer() {
 }
 
 void Scanner::saveToken(std::string token) {
-    m_buffer += token;
+    m_buffer.insert(0, token);
 }
 
 bool Scanner::hasMoreTokens() {

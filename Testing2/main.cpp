@@ -9,7 +9,7 @@
 int main()
 {
     Scanner scn;
-    scn.setInput("((x+10)*(10+x) + y)");
+    scn.setInput("(x+10)*(x+10) + y");
     EvalState state;
     state.setValue("x", 1);
     state.setValue("y", 2);
