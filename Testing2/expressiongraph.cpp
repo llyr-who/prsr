@@ -16,14 +16,14 @@ namespace {
 
 
 ExpressionGraph::ExpressionGraph(Expression* graph) : graph(graph) {
-    fixExpressionGraph(graph);
+    //fixExpressionGraph(graph);
 }
 
 ExpressionGraph::ExpressionGraph(Expression* graph,
                                  EvalState& state) :
                                  graph(graph),
                                  state(state) {
-    fixExpressionGraph(graph);
+    //fixExpressionGraph(graph);
     // call forward pass.
     // call reverse pass.
                                      

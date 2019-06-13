@@ -12,6 +12,16 @@
 
 #include <cctype>
 
+// Bugs
+
+// When we encounter an operator that
+// has lesser precendence than the
+// last one encountered, we need to
+// ignore it at force it to appear
+// higher up in the tree.
+
+
+
 Expression *ParseExpression(Scanner& scanner, int prec)
 {
     Expression *e = ReadExpression(scanner, prec);
@@ -29,6 +39,7 @@ Expression *ReadExpression(Scanner& scanner, int prec) {
         int newPrec = Precedence(token);
         if (newPrec <= prec) break;
         Expression *rhs = ReadExpression(scanner, newPrec);
+        // this line is the problem...
         exp = new BinaryOperation(token[0], exp, rhs);
     }
     scanner.saveToken(token);
