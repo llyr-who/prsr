@@ -25,8 +25,11 @@
 Expression *ParseExpression(Scanner& scanner, int prec)
 {
     Expression *e = ReadExpression(scanner, prec);
+    scanner.nextToken(); // burn last token - auto-saved from ReadExpression
     if(scanner.hasMoreTokens()) {
-        std::cout << "found more tokens " + scanner.nextToken() << std::endl;
+        std::string state = scanner.getBuffer();
+        std::cout << "found more tokens " + state.substr(scanner.getCurrentIndex(),
+                                                         state.length()) << std::endl;
     }
     return e;
 }

@@ -43,9 +43,11 @@ std::string Scanner::nextToken() {
 std::string Scanner::getBuffer() {
     return m_buffer;
 }
+int Scanner::getCurrentIndex() { return m_cp; }
 
 void Scanner::saveToken(std::string token) {
-    m_buffer.insert(0, token);
+    m_cp--;
+    //m_buffer.insert(0, token); - optimisation
 }
 
 bool Scanner::hasMoreTokens() {

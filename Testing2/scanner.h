@@ -21,7 +21,7 @@ public:
     std::string     getBuffer();
     void            saveToken(std::string token);
     bool            hasMoreTokens();
-    
+    int             getCurrentIndex();
     enum            spaceOption {PreserveSpaces, IgnoreSpaces};
 private:
     int             scanToEndOfIdentifier();
