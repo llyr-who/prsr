@@ -23,7 +23,7 @@ ExpressionGraph::ExpressionGraph(Expression* graph,
                                  EvalState& state) :
                                  graph(graph),
                                  state(state) {
-    //fixExpressionGraph(graph);
+    fixExpressionGraph(graph);
     // call forward pass.
     // call reverse pass.
                                      

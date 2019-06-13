@@ -20,20 +20,18 @@ Scanner::~Scanner() {}
 
 void Scanner::setInput(std::string str) {
     m_buffer = str;
-    m_len = str.length();
     m_cp = 0;
 }
 
 void Scanner::setInput(std::istream& infile) {
     std::getline(infile, m_buffer);
-    m_len = m_buffer.size();
     m_cp = 0;
 }
 
 std::string Scanner::nextToken() {
     if(m_spaceOption == IgnoreSpaces) skipSpaces();
     int s = m_cp;
-    if(s >= m_len) return "";
+    if(s >= m_buffer.length()) return "";
     if(isalnum(m_buffer[m_cp])) {
         int f = scanToEndOfIdentifier();
         return m_buffer.substr(s, f - s + 1);
@@ -51,18 +49,18 @@ void Scanner::saveToken(std::string token) {
 }
 
 bool Scanner::hasMoreTokens() {
-    return m_cp == m_len - 1;
+    return m_cp == m_buffer.length() - 1;
 }
 
 int Scanner::scanToEndOfIdentifier() {
-    while(m_cp < m_len && isalnum(m_buffer[m_cp])) {
+    while(m_cp < m_buffer.length() && isalnum(m_buffer[m_cp])) {
         m_cp++;
     }
     return m_cp - 1;
 }
 
 void Scanner::skipSpaces() {
-    while(m_cp < m_len && isspace(m_buffer[m_cp])) {
+    while(m_cp < m_buffer.length() && isspace(m_buffer[m_cp])) {
         m_cp++;
     }
 }

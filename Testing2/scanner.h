@@ -27,7 +27,6 @@ private:
     int             scanToEndOfIdentifier();
     void            skipSpaces();
     std::string     m_buffer; //contains the tokens
-    unsigned long   m_len;    // buffer length
     int             m_cp;     // current index in the buffer
     spaceOption     m_spaceOption;
 };
