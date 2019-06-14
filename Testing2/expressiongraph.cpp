@@ -67,3 +67,7 @@ void ExpressionGraph::fixExpressionGraph(Expression* node, int side) {
 double ExpressionGraph::ForwardPass() {
     return graph->eval(state);
 }
+
+void ExpressionGraph::BackwardPass() {
+    graph->grad(state);
+}

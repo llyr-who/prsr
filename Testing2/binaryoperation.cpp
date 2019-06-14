@@ -16,7 +16,8 @@ BinaryOperation::BinaryOperation(char operation,
                                   lhs(lhs),
                                   rhs(rhs) {}
 
-double BinaryOperation::eval(EvalState & state){
+double BinaryOperation::eval(EvalState& state) {
+    m_gotValue = true;
     if(op == '+') {
         return lhs->eval(state) + rhs->eval(state);
     }
@@ -31,6 +32,12 @@ double BinaryOperation::eval(EvalState & state){
     }
 }
 
+double BinaryOperation::grad(EvalState& state) {
+    if(op == '*') {
+        
+    }
+    
+}
 
 void BinaryOperation::setLHS(Expression* e) { lhs = e;}
 void BinaryOperation::setRHS(Expression* e) { rhs = e;}
