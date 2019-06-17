@@ -10,10 +10,16 @@
 
 #include <stdio.h>
 
-ConstantExpression::ConstantExpression(double val) : m_value(val) {}
+ConstantExpression::ConstantExpression(double val) {
+    m_value = val;
+    m_gotValue = true;
+}
 
 double ConstantExpression::eval(EvalState& state) {
     return m_value;
+}
+
+void ConstantExpression::grad(EvalState& state) {
 }
 
 expressionType ConstantExpression::getType() { return kConstantExpression; }

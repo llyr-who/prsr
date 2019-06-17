@@ -16,9 +16,8 @@ class ConstantExpression : public Expression {
 public:
     ConstantExpression(double val);
     virtual double          eval(EvalState& state);
+    virtual void            grad(EvalState& state);
     virtual expressionType  getType();
     double      getValue();
-private:
-    double      m_value;
 };
 #endif /* constantexpression_h */

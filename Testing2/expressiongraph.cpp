@@ -16,7 +16,7 @@ namespace {
 
 
 ExpressionGraph::ExpressionGraph(Expression* graph) : graph(graph) {
-    //fixExpressionGraph(graph);
+    fixExpressionGraph(graph);
 }
 
 ExpressionGraph::ExpressionGraph(Expression* graph,
@@ -24,10 +24,8 @@ ExpressionGraph::ExpressionGraph(Expression* graph,
                                  graph(graph),
                                  state(state) {
     fixExpressionGraph(graph);
-    // call forward pass.
-    // call reverse pass.
-                                     
-                                    
+    ForwardPass();
+    BackwardPass();
 }
 
 // this function fixes duplicate variables.
@@ -68,6 +66,8 @@ double ExpressionGraph::ForwardPass() {
     return graph->eval(state);
 }
 
-void ExpressionGraph::BackwardPass() {
+double ExpressionGraph::BackwardPass() {
+    graph->setGrad(1);
     graph->grad(state);
+    return 1.0;
 }

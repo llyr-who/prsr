@@ -19,6 +19,10 @@ double VariableExpression::eval(EvalState& state) {
     return 0;
 }
 
+void VariableExpression::grad(EvalState &state) {
+    std::cout << m_grad << std::endl;
+}
+
 expressionType VariableExpression::getType() { return kVariableExpression; }
 
 void VariableExpression::addParent(Expression* p){

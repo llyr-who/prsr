@@ -17,26 +17,29 @@ BinaryOperation::BinaryOperation(char operation,
                                   rhs(rhs) {}
 
 double BinaryOperation::eval(EvalState& state) {
-    m_gotValue = true;
-    if(op == '+') {
-        return lhs->eval(state) + rhs->eval(state);
+    if(!m_gotValue) {
+        m_gotValue = true;
+        if(op == '+') {
+            m_value = lhs->eval(state) + rhs->eval(state);
+        }
+        if(op == '*') {
+            m_value = lhs->eval(state) * rhs->eval(state);
+        }
+        if(op == '/') {
+            m_value = lhs->eval(state) / rhs->eval(state);
+        }
+        else {
+            m_value = lhs->eval(state) - rhs->eval(state);
+        }
     }
-    if(op == '*') {
-        return lhs->eval(state) * rhs->eval(state);
-    }
-    if(op == '/') {
-        return lhs->eval(state) / rhs->eval(state);
-    }
-    else {
-        return lhs->eval(state) - rhs->eval(state);
-    }
+    return m_value;
 }
 
-double BinaryOperation::grad(EvalState& state) {
-    if(op == '*') {
-        
-    }
-    
+void BinaryOperation::grad(EvalState& state) {
+    lhs->setGrad(lhs->getGrad() + m_grad*rhs->eval(state));
+    rhs->setGrad(lhs->getGrad() - m_grad*lhs->eval(state));
+    lhs->grad(state);
+    lhs->grad(state);
 }
 
 void BinaryOperation::setLHS(Expression* e) { lhs = e;}

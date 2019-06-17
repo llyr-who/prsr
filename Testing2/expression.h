@@ -22,6 +22,8 @@ public:
     virtual ~Expression();
     void                     setParent(Expression* p);
     Expression*              getParent();
+    void                     setGrad(double grad);
+    double                   getGrad() { return m_grad; }
     // pure virtual methods
     virtual double           eval(EvalState & state) = 0;
     virtual void             grad(EvalState & state) = 0;
@@ -32,10 +34,9 @@ public:
     virtual std::string      getName() { return ""; }
 protected:
     Expression* parent = nullptr;
-    double      m_grad;
-    double      m_value;
-    bool        m_first;
-    bool        m_gotValue;
+    double      m_grad;             // gradient of node
+    double      m_value;            // the value of the node
+    bool        m_gotValue;         // have we already calculated value?
 };
 
 #endif /* Expression_hpp */

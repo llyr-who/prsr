@@ -25,7 +25,7 @@ public:
     ExpressionGraph(Expression* graph);
     ExpressionGraph(Expression* graph, EvalState& state);
     double ForwardPass();
-    void BackwardPass();
+    double BackwardPass();
 };
 
 #endif /* expressiongraph_hpp */

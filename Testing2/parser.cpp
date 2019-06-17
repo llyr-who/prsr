@@ -12,16 +12,6 @@
 
 #include <cctype>
 
-// Bugs
-
-// When we encounter an operator that has lesser precendence than the
-// last one encountered in the same recursion layer, we need to ignore
-// it at force it to appear higher up in the tree.
-// For example x*x+y*y.
-// When the * is discovered we encounter the + in the same recursion layer
-// where prec = 0.
-
-
 Expression *ParseExpression(Scanner& scanner, int prec)
 {
     Expression *e = ReadExpression(scanner, prec);
@@ -41,15 +31,11 @@ Expression *ReadExpression(Scanner& scanner, int prec) {
         std::cout << scanner.getBuffer() << std::endl;
         token = scanner.nextToken();
         int newPrec = Precedence(token);
-        std::cout << newPrec << " " << prec << std::endl;
-        std::cout << token << "operation encountered" << std::endl;
         if (newPrec <= prec) {
-            std::cout << "breaking" << std::endl;
             break;
         }
         Expression *rhs = ReadExpression(scanner, newPrec);
         exp = new BinaryOperation(token[0], exp, rhs);
-        std::cout << token << "operation created" << std::endl;
     }
     scanner.saveToken(token);
     return exp;
@@ -69,7 +55,6 @@ Expression *ReadTerm(Scanner& scanner) {
         token = scanner.nextToken();
         if (token != ")" && token != "") {
             std::cout << "Unbalanced parentheses in expression" << std::endl;
-            std::cout << token << std::endl;
         }
     } else if (token == "" ) {
         exp = nullptr;

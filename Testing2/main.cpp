@@ -9,12 +9,11 @@
 int main()
 {
     Scanner scn;
-    scn.setInput("(x+10)*(x+10)+(y+1)*(y+1)");
-    scn.setInput("x*x*y*y");
+    scn.setInput("(x+10)*(x+10)");
+    // derivative 2*x + 20
+    scn.setInput("x*x*2");
     EvalState state;
-    state.setValue("x", 3);
-    state.setValue("y", 2);
+    state.setValue("x", 1);
     ExpressionGraph g(ParseExpression(scn), state);
-    std::cout << g.ForwardPass() << std::endl;
     return 0;
 }

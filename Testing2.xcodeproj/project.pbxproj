@@ -49,6 +49,7 @@
 		92C2AC35229FC52F007C379D /* constantexpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constantexpression.h; sourceTree = "<group>"; };
 		92C2AC36229FC73C007C379D /* variableexpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = variableexpression.h; sourceTree = "<group>"; };
 		92C2AC37229FC7B5007C379D /* binaryoperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = binaryoperation.h; sourceTree = "<group>"; };
+		92C722C922B7C53A00900A53 /* progress_report */ = {isa = PBXFileReference; lastKnownFileType = text; path = progress_report; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 				9295DD6B229889E5001550AE /* scanner.cpp */,
 				9295DD71229B1194001550AE /* evalstate.h */,
 				92C2AC33229FBF7E007C379D /* evalstate.cpp */,
+				92C722C922B7C53A00900A53 /* progress_report */,
 			);
 			path = Testing2;
 			sourceTree = "<group>";
