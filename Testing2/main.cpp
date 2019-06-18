@@ -5,13 +5,12 @@
 
 #include <iostream>
 
-
 int main()
 {
     Scanner scn;
-    scn.setInput("x*y + x*x"); 
+    scn.setInput("x*x*x*x + y*y*y");
     EvalState state;
-    state.setValue("x", 1);
+    state.setValue("x", 2);
     state.setValue("y", 2);
     ExpressionGraph g(ParseExpression(scn), state);
     std::cout << scn.getBuffer() << std::endl;

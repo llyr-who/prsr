@@ -7,21 +7,23 @@
 //
 
 #include "variableexpression.h"
-
-VariableExpression::VariableExpression(std::string name) : name(name) {}
+namespace {int count;}
+VariableExpression::VariableExpression(std::string name) : name(name) {
+    count = 0;
+}
 
 
 double VariableExpression::eval(EvalState& state) {
-    if(state.isDefined(name)) {
-        return state.getValue(name);
+    if(!m_gotValue) {
+        m_gotValue = true;
+        m_value =  state.getValue(name);
     }
-    std::cout << "corrupt state" << std::endl;
-    return 0;
+    return m_value;
 }
 
 void VariableExpression::grad(EvalState &state) {
-    if(!m_gotGrad){
-        m_gotGrad = true;
+    count++;
+    if(count > otherParents.size()) {
         state.setGradient(name, m_grad);
     }
 }

@@ -12,8 +12,7 @@
 
 Expression::Expression() : m_grad(0),
                            m_value(0),
-                           m_gotValue(false),
-                           m_gotGrad(false)
+                           m_gotValue(false)
                             { /* Empty */ }
 
 Expression::~Expression() { /* Empty */ }

@@ -21,14 +21,11 @@ double BinaryOperation::eval(EvalState& state) {
         m_gotValue = true;
         if(op == '+') {
             m_value = lhs->eval(state) + rhs->eval(state);
-        }
-        if(op == '*') {
+        } else if(op == '*') {
             m_value = lhs->eval(state) * rhs->eval(state);
-        }
-        if(op == '/') {
+        } else if(op == '/') {
             m_value = lhs->eval(state) / rhs->eval(state);
-        }
-        else {
+        } else {
             m_value = lhs->eval(state) - rhs->eval(state);
         }
     }
@@ -37,13 +34,12 @@ double BinaryOperation::eval(EvalState& state) {
 
 void BinaryOperation::grad(EvalState& state) {
     if(op == '*') {
+        //std::cout << lhs->eval(state) << std::endl;
         lhs->setGrad(lhs->getGrad() + m_grad*rhs->eval(state));
         rhs->setGrad(rhs->getGrad() + m_grad*lhs->eval(state));
-    }
-    else if (op == '+') {
+    } else if (op == '+') {
         lhs->setGrad(lhs->getGrad() + m_grad*1);
         rhs->setGrad(rhs->getGrad() + m_grad*1);
-
     }
     lhs->grad(state);
     rhs->grad(state);
