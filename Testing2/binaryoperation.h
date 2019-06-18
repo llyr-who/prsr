@@ -16,7 +16,7 @@ public:
                     Expression *lhs,
                     Expression *rhs);
     virtual double          eval(EvalState& state);
-    virtual void          grad(EvalState& state);
+    virtual void            grad(EvalState& state);
     virtual expressionType  getType();
     
     Expression*     getLHS() { return lhs;}

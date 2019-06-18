@@ -9,7 +9,7 @@
 int main()
 {
     Scanner scn;
-    scn.setInput("x*x*x*x + y*y*y*y"); // wrong gradients
+    scn.setInput("x*y + x*x"); 
     EvalState state;
     state.setValue("x", 1);
     state.setValue("y", 2);
