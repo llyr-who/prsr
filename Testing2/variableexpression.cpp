@@ -20,7 +20,10 @@ double VariableExpression::eval(EvalState& state) {
 }
 
 void VariableExpression::grad(EvalState &state) {
-    std::cout << m_grad << std::endl;
+    if(!m_gotGrad){
+        m_gotGrad = true;
+        state.setGradient(name, m_grad);
+    }
 }
 
 expressionType VariableExpression::getType() { return kVariableExpression; }

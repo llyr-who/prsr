@@ -37,6 +37,7 @@ protected:
     double      m_grad;             // gradient of node
     double      m_value;            // the value of the node
     bool        m_gotValue;         // have we already calculated value?
+    bool        m_gotGrad;             // already calculated grad;
 };
 
 #endif /* Expression_hpp */

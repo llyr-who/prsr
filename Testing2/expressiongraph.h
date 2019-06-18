@@ -20,7 +20,12 @@ private:
     void fixExpressionGraph(Expression* node,
                             int side = 0);
     std::map< std::string, Expression* > symInfo;
-    EvalState                            state;
+    // The state is kept as a reference.
+    // This means that we can reset the graph, change
+    // the values of the variables then run it again.
+    // It also means that we can reset the values of
+    // the gradient if we change the values.
+    EvalState&                           state;
 public:
     ExpressionGraph(Expression* graph);
     ExpressionGraph(Expression* graph, EvalState& state);

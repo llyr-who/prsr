@@ -28,7 +28,6 @@ Expression *ReadExpression(Scanner& scanner, int prec) {
     Expression *exp = ReadTerm(scanner);
     std::string token;
     while (true) {
-        std::cout << scanner.getBuffer() << std::endl;
         token = scanner.nextToken();
         int newPrec = Precedence(token);
         if (newPrec <= prec) {

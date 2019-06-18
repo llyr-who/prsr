@@ -36,10 +36,17 @@ double BinaryOperation::eval(EvalState& state) {
 }
 
 void BinaryOperation::grad(EvalState& state) {
-    lhs->setGrad(lhs->getGrad() + m_grad*rhs->eval(state));
-    rhs->setGrad(lhs->getGrad() - m_grad*lhs->eval(state));
+    if(op == '*') {
+        lhs->setGrad(lhs->getGrad() + m_grad*rhs->eval(state));
+        rhs->setGrad(rhs->getGrad() + m_grad*lhs->eval(state));
+    }
+    else if (op == '+') {
+        lhs->setGrad(lhs->getGrad() + m_grad*1);
+        rhs->setGrad(rhs->getGrad() + m_grad*1);
+
+    }
     lhs->grad(state);
-    lhs->grad(state);
+    rhs->grad(state);
 }
 
 void BinaryOperation::setLHS(Expression* e) { lhs = e;}
