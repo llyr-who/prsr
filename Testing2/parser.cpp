@@ -48,6 +48,12 @@ Expression *ReadTerm(Scanner& scanner) {
     if (isdigit(token[0])) {
         exp = new ConstantExpression(std::stoi(token));
     } else if (isalpha(token[0])) {
+        // search through list of unary functions
+        // if(unary expression available) {
+        //      1. exp = ReadExpression
+        //      2. exp = new UnaryOperation(token, exp);
+        //      3. if(token != ")") { complain!; }
+        // } else {
         exp = new VariableExpression(token);
     } else if (token == "(") {
         exp = ReadExpression(scanner);
