@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921C458922BB6BAF009D22F8 /* unaryoperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 921C458722BB6BAE009D22F8 /* unaryoperation.cpp */; };
 		921D237D22ABCECA0095B1D7 /* expressiongraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 921D237B22ABCECA0095B1D7 /* expressiongraph.cpp */; };
 		927E8E5B22A2787B009E2784 /* variableexpression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927E8E5A22A2787B009E2784 /* variableexpression.cpp */; };
 		92850B9022883533006E13B1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92850B8F22883533006E13B1 /* main.cpp */; };
@@ -31,6 +32,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		921C458722BB6BAE009D22F8 /* unaryoperation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = unaryoperation.cpp; sourceTree = "<group>"; };
+		921C458822BB6BAE009D22F8 /* unaryoperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unaryoperation.h; sourceTree = "<group>"; };
 		921D237B22ABCECA0095B1D7 /* expressiongraph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = expressiongraph.cpp; sourceTree = "<group>"; };
 		921D237C22ABCECA0095B1D7 /* expressiongraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = expressiongraph.h; sourceTree = "<group>"; };
 		927E8E5A22A2787B009E2784 /* variableexpression.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = variableexpression.cpp; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				92850B8F22883533006E13B1 /* main.cpp */,
+				921C458722BB6BAE009D22F8 /* unaryoperation.cpp */,
+				921C458822BB6BAE009D22F8 /* unaryoperation.h */,
 				921D237B22ABCECA0095B1D7 /* expressiongraph.cpp */,
 				921D237C22ABCECA0095B1D7 /* expressiongraph.h */,
 				9295DD6A229889C3001550AE /* scanner.h */,
@@ -165,6 +170,7 @@
 				92B6F0F922A0451A009F7F3F /* parser.cpp in Sources */,
 				9295DD6C229889E5001550AE /* scanner.cpp in Sources */,
 				92B6F0FD22A12BCA009F7F3F /* constantexpression.cpp in Sources */,
+				921C458922BB6BAF009D22F8 /* unaryoperation.cpp in Sources */,
 				927E8E5B22A2787B009E2784 /* variableexpression.cpp in Sources */,
 				92850B9022883533006E13B1 /* main.cpp in Sources */,
 				921D237D22ABCECA0095B1D7 /* expressiongraph.cpp in Sources */,

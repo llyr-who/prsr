@@ -4,6 +4,7 @@ software.
 Main targets:
 [In Progress] Basic Reverse Auto-Differentiation routine
 [] Refactoring to be more modular
+[] Add enumerations of available binary/unary operations.
 
 Side targets
 [] treats PDE input

@@ -8,9 +8,9 @@
 int main()
 {
     Scanner scn;
-    scn.setInput("sin( + y*y*y");
+    scn.setInput("sin(x) + y*y*y");
     EvalState state;
-    state.setValue("sin(", 2);
+    state.setValue("x", 9287349);
     state.setValue("y", 2);
     ExpressionGraph g(ParseExpression(scn), state);
     std::cout << scn.getBuffer() << std::endl;
