@@ -1,34 +1,29 @@
-//
-//  Scanner.h
-//  Testing2
-//
-//  Created by AnthonyFPP on 24/05/2019.
-//  Copyright © 2019 AnthonyFPP. All rights reserved.
-//
-
 #ifndef Scanner_h
 #define Scanner_h
 
 #include <string>
-
-class Scanner {
+namespace PRSR {
+namespace core {
+class scanner {
 public:
-                    Scanner();
-                   ~Scanner();
-    void            setInput(std::string str);
-    void            setInput(std::istream& infile);
-    std::string     nextToken();
-    std::string     getBuffer();
-    void            saveToken(std::string token);
-    bool            hasMoreTokens();
-    int             getCurrentIndex();
-    enum            spaceOption {PreserveSpaces, IgnoreSpaces};
-private:
-    int             scanToEndOfIdentifier();
-    void            skipSpaces();
-    std::string     m_buffer; //contains the tokens
-    int             m_cp;     // current index in the buffer
-    spaceOption     m_spaceOption;
-};
+    scanner();
+    ~scanner();
+    void setInput(std::string str);
+    void setInput(std::istream& infile);
+    std::string nextToken();
+    std::string getBuffer();
+    void saveToken(std::string token);
+    bool hasMoreTokens();
+    int getCurrentIndex();
+    enum spaceOption { PreserveSpaces, IgnoreSpaces };
 
-#endif /* Scanner_h */
+private:
+    int scanToEndOfIdentifier();
+    void skipSpaces();
+    std::string m_buffer;  // contains the tokens
+    int m_cp;              // current index in the buffer
+    spaceOption m_spaceOption;
+};
+}  // namespace core
+}  // namespace PRSR
+#endif

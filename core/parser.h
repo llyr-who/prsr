@@ -1,17 +1,9 @@
-//
-//  parser.hpp
-//  Testing2
-//
-//  Created by AnthonyFPP on 30/05/2019.
-//  Copyright © 2019 AnthonyFPP. All rights reserved.
-//
-
 #ifndef parser_hpp
 #define parser_hpp
 
-#include "expression.h"
-#include "scanner.h"
-#include "binaryoperation.h"
+#include "expression/expression.h"
+#include "core/scanner.h"
+#include "operator/binaryoperator.h"
 #include "constantexpression.h"
 #include "variableexpression.h"
 #include "unaryoperation.h"
