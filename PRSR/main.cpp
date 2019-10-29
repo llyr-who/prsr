@@ -1,7 +1,7 @@
-#include "scanner.h"
-#include "evalstate.h"
-#include "parser.h"
-#include "expressiongraph.h"
+#include "core/scanner.h"
+#include "core/evalstate.h"
+#include "core/parser.h"
+#include "expression/expressiongraph.h"
 
 #include <iostream>
 
