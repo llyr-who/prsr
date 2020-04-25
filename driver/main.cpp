@@ -1,12 +1,11 @@
-#include "scanner.h"
-#include "evalstate.h"
-#include "parser.h"
-#include "expressiongraph.h"
+#include "prsr/src/evalstate.h"
+#include "prsr/src/expressiongraph.h"
+#include "prsr/src/parser.h"
+#include "prsr/src/scanner.h"
 
 #include <iostream>
 
-int main()
-{
+int main() {
     Scanner scn;
     scn.setInput("x*x*x*x + y*y*y");
     EvalState state;
