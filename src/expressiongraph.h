@@ -1,11 +1,3 @@
-//
-//  expressiongraph.hpp
-//  Testing2
-//
-//  Created by AnthonyFPP on 08/06/2019.
-//  Copyright © 2019 AnthonyFPP. All rights reserved.
-//
-
 #ifndef expressiongraph_hpp
 #define expressiongraph_hpp
 
