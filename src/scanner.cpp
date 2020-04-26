@@ -1,12 +1,3 @@
-//
-//  Scanner.cpp
-//  Testing2
-//
-//  Created by AnthonyFPP on 24/05/2019.
-//  Copyright © 2019 AnthonyFPP. All rights reserved.
-//
-
-
 #include "scanner.h"
 
 #include <iostream>

@@ -1,11 +1,3 @@
-//
-//  expression.h
-//  Testing2
-//
-//  Created by AnthonyFPP on 26/05/2019.
-//  Copyright © 2019 AnthonyFPP. All rights reserved.
-//
-
 #ifndef Expression_hpp
 #define Expression_hpp
 

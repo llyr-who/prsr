@@ -1,11 +1,3 @@
-//
-//  variableexpression.h
-//  Testing2
-//
-//  Created by AnthonyFPP on 30/05/2019.
-//  Copyright © 2019 AnthonyFPP. All rights reserved.
-//
-
 #ifndef variableexpression_h
 #define variableexpression_h
 

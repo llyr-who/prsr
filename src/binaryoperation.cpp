@@ -34,7 +34,6 @@ double BinaryOperation::eval(EvalState& state) {
 
 void BinaryOperation::grad(EvalState& state) {
     if(op == '*') {
-        //std::cout << lhs->eval(state) << std::endl;
         lhs->setGrad(lhs->getGrad() + m_grad*rhs->eval(state));
         rhs->setGrad(rhs->getGrad() + m_grad*lhs->eval(state));
     } else if (op == '+') {
