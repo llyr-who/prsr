@@ -7,10 +7,10 @@
 
 int main() {
     Scanner scn;
-    scn.setInput("x*x*x*x + y*y*y");
+    scn.setInput("x*y + x*y");
     EvalState state;
     state.setValue("x", 2);
-    state.setValue("y", 2);
+    state.setValue("y", 3);
     ExpressionGraph g(ParseExpression(scn), state);
     std::cout << scn.getBuffer() << std::endl;
     state.output();
